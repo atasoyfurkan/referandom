@@ -5,7 +5,7 @@ class Privacy extends Component {
     return (
       <div className=" a-container text-white d-flex justify-content-center">
         <p>
-          <p><b>1.TOPLADIĞIMIZ VE KULLANDIĞIMIZ BİLGİLER</b> </p>
+          <p>1.TOPLADIĞIMIZ VE KULLANDIĞIMIZ BİLGİLER </p>
           <p>
             {" "}
             Referandom’daki deneyimizi iyileştirmek ve geliştirmek için bazı
@@ -23,12 +23,12 @@ class Privacy extends Component {
             ve üçüncü partinin çerezlerini kullanır ve böylece içeriğinin daha
             kullanışlı olmasını sağlar. Dolayısıyla 34/2002 11 Temmuz
             Mevzuatında belirtilen, sosyal bilgi servisleri ve elektronik
-            ticaret (LSSI) için, <i>“Çerez İdaresi”</i> olarak bilinen İspanyol
+            ticaret (LSSI) için, “Çerez İdaresi” olarak bilinen İspanyol
             Mevzuatına uyumlaştırılmış, Directive 2009/136/EC’a bağlı
             kalınmıştır. Bu çerezler sayfaya bir sonraki girişinizde sizi
             tanımamızı sağlar.{" "}
           </p>
-          <p><b>2. PAYLAŞABİLDİĞİMİZ BİLGİLER</b></p>
+          <p>2. PAYLAŞABİLDİĞİMİZ BİLGİLER</p>
           <p>
             Referandom bir toplumsal dayanışma platformudur. Arama motorlarının
             sonuçlarında kullanıcı adınız, profil fotoğrafınız ve hareketleriniz
@@ -36,7 +36,7 @@ class Privacy extends Component {
             paylaşabiliriz, Kampanya sponsorlarıyla Kampanyanın hedef kitlesiyle
             ve sahibi ile İş ortaklarımızla Herhangi bir hukuk sürecinde{" "}
           </p>
-          <p><b>3. BİLGİLERİNİZİN DEPOLANMASI VE GÜVENLİĞİNİZ BİZİM İÇİN ÖNEMLİ</b></p>
+          <p>3. BİLGİLERİNİZİN DEPOLANMASI VE GÜVENLİĞİNİZ BİZİM İÇİN ÖNEMLİ</p>
           <p>
             Referandom bilgilerinizin güvenliğini önemser Lütfen hesabınızı
             güçlü bir şifreyle koruyun ve herhangi bir şüpheli aktivitede bize
@@ -44,7 +44,7 @@ class Privacy extends Component {
             Cumhuriyeti yasalarında belirtildiği üzere bazı bilgilerinizi
             izniniz olmaksızın bazı kurumlarla paylaşma hakkını saklı tutar.{" "}
           </p>
-          <p><b>4. 18 YAŞINDAN KÜÇÜK KULLANICILAR</b></p>
+          <p>4. 18 YAŞINDAN KÜÇÜK KULLANICILAR</p>
           <p>
             İçeriklerimiz 18 yaş altı kullanıcıları hedef almamakla beraber,
             kullanıcılar paylaştığı içerik ve yorumlardan kendileri sorumludur.
@@ -52,7 +52,7 @@ class Privacy extends Component {
             şekilde temizlemeye çalışıyoruz, bu konu ile alakalı
             destek@referandom.com ‘dan bize ulaşabilirsiniz.
           </p>
-          <p><b>5. GÜNCELLEME VE DEĞİŞTİRME</b></p>
+          <p>5. GÜNCELLEME VE DEĞİŞTİRME</p>
           <p>
             İşbu sözleşmede yer alan maddeleri değiştirme ve düzenleme hakkımızı
             saklı tutarız. Sözleşmedeki maddelere uymayan kullanıcıların

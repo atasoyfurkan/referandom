@@ -87,7 +87,7 @@ class CommentTextarea extends Component {
                   }`}
                   onClick={this.handleSubmit}
                 >
-                  Gerekçeni Belirt
+                  Yorum Yap
                 </div>
               </div>
             </div>

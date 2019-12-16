@@ -375,10 +375,9 @@ body {
 .row.index .form {
   width: 80%;
   margin: 0 auto;
-  margin-top: 10px;
 }
 .row.index .form h2 {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   text-align: center;
 }
 .row.index .form p {
