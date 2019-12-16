@@ -12,9 +12,18 @@ import Logout from "./screens/logout";
 import NotFound from "./screens/notFound";
 import Terms from "./screens/terms";
 import Privacy from "./screens/privacy";
+import AboutUs from "./screens/aboutus";
 import VoteCard from "./screens/voteCard";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
+
+
+
+import ReactGA from 'react-ga';
+
+  ReactGA.initialize('UA-154553324-2');
+  ReactGA.pageview('/');
+
 
 class App extends Component {
   state = { navbarMargin: 0, sidebarShow: false, redirect: null };
@@ -64,6 +73,7 @@ class App extends Component {
             <Route path="/not-found" component={NotFound} />
             <Route path="/terms" component={Terms} />
             <Route path="/privacy" component={Privacy} />
+            <Route path="/aboutus" component={AboutUs} />
             <Route path="/onerge" component={VoteCard} />
             <Route
               path="/profile"

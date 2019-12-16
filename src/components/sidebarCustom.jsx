@@ -77,6 +77,12 @@ class SidebarCustom extends Component {
                   Gizlilik Politikası
                 </List>
               </Menu.Item>
+              <Menu.Item className="p-4" as="a" href="/aboutus">
+                <List className="d-flex justify-content-start" size="huge">
+                  <Icon className="mr-3" name="users" />
+                  Hakkımızda
+                </List>
+              </Menu.Item>
               <Menu.Item
                 className="p-4"
                 as="a"
