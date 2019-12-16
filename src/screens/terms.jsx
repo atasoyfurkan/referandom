@@ -5,17 +5,17 @@ class Terms extends Component {
     return (
       <div className="a-container text-white d-flex justify-content-center">
         <p>
-          1. Kayıt Olma
+          <b>1. Kayıt Olma</b>
           <p>
             {" "}
-            ÖZET: Referandom’u kullanmaya başlamak için lütfen gerçek
+            <b>ÖZET:</b> Referandom’u kullanmaya başlamak için lütfen gerçek
             kimliğinizi kullanarak bir hesap oluşturun. Bir kişiyi taklit
             ederseniz, Referandom’a erişiminiz engellenir ve hesabınız
             feshedilir. Lütfen hesabınız ve üzerinde yayınlanan herhangi bir şey
             için yasal bir sorumluluğunuz olduğunu unutmayın.{" "}
           </p>
           <p>
-            ÖZET: Referandom’u kullanmak için 18 yaşından büyük olmalısınız.
+          <b>ÖZET:</b> Referandom’u kullanmak için 18 yaşından büyük olmalısınız.
             Referandom, yalnızca on sekiz (18) yaşında (ya da daha büyük) olan
             kullanıcılara yöneliktir. Referandom’u kullanarak, on sekiz yaşından
             büyük olduğunuzu ve tüm şart ve koşullarına uymayı kabul ettiğinizi
@@ -24,7 +24,7 @@ class Terms extends Component {
             aldığımız bilgiler veritabanımızdan silinecektir.{" "}
           </p>
           <p>
-            ÖZET: Sadece gerçek kişiler ve yetkili Referandom iş ortakları'nın
+          <b>ÖZET:</b> Sadece gerçek kişiler ve yetkili Referandom iş ortakları'nın
             bu zamanda hesap oluşturmasına ve sürdürmesine izin verilir. Bir
             topluluk adına kaydolursanız, bu şartı da bu topluluğa bağlarsınız.
             Referandom hesabınız, zaman zaman ve tamamen kendi takdirimize bağlı
@@ -41,7 +41,7 @@ class Terms extends Component {
             olursunuz.{" "}
           </p>
           <p>
-            ÖZET: Referandom’da güvenliği ciddiye alıyoruz. Lütfen hesabınızı
+          <b>ÖZET:</b> Referandom’da güvenliği ciddiye alıyoruz. Lütfen hesabınızı
             güçlü bir parola ile koruyarak adil paylaşımınızı yapın. Hesabınızda
             herhangi bir şüpheli etkinlik fark ederseniz, lütfen hemen bize
             e-posta gönderin. Başka bir kullanıcının hesabını, kullanıcının
@@ -56,7 +56,7 @@ class Terms extends Component {
           </p>
           <p>
             {" "}
-            ÖZET: Profil bilgilerinizi ve e-posta tercihlerinizi değiştirmek
+            <b>ÖZET:</b> Profil bilgilerinizi ve e-posta tercihlerinizi değiştirmek
             kolaydır. Ayarlarınıza erişmek için Referandom'da profilinize giriş
             yapın. Kullanıcı profilinizi ve web sitenizdeki ayarlar sayfanızdaki
             ayarları değiştirerek profilinizin Referandom ile nasıl etkileşimde
@@ -74,10 +74,9 @@ class Terms extends Component {
             sonlandırmak dışında, hizmetle ilgili duyurular ve yönetim mesajları
             gibi belirli iletişimleri almayı seçemezsiniz.{" "}
           </p>
-          <p>
-            2. Kabul Edilebilir Kullanım
+          <p><b>2. Kabul Edilebilir Kullanım</b> 
             <p>
-              ÖZET: Referandom kullanırken sağduyunuzu kullanın. Herkesin
+            <b>ÖZET:</b> Referandom kullanırken sağduyunuzu kullanın. Herkesin
               deneyimini güvenli ve keyifli hale getirmeye yardımcı olur.
               Referandom'un (reklam ve kişiselleştirilmiş içeriklerin sağlanması
               dahil olmak üzere) özelliklerini ve işlevselliğini çalıştırması,
@@ -86,7 +85,7 @@ class Terms extends Component {
               gereklidir.{" "}
             </p>
             <p>
-              ÖZET: Lütfen, Referandom hakkındaki düşüncelerinizi belirtmekten
+            <b>ÖZET:</b> Lütfen, Referandom hakkındaki düşüncelerinizi belirtmekten
               ve sosyal ağlarınızda paylaşmaktan çekinmeyin. Diğer
               kullanıcıların içeriğinizi göreceğini ve platformda onlarla
               etkileşimde bulunabilceğinizi unutmayın. Referandom’da sunulan
@@ -129,7 +128,7 @@ class Terms extends Component {
               hazırlamak da dahil olmak üzere, değiştirmek veya değiştirmek.{" "}
             </p>
             <p>
-              ÖZET: Referandom yalnızca bu şartlara uygun olarak kullanmanıza
+            <b>ÖZET:</b> Referandom yalnızca bu şartlara uygun olarak kullanmanıza
               izin verilmektedir. Referandom kullanırken geçerli tüm yasalara
               uymalısınız. Referandom tarafından size sunulan şartlar ve
               özellikler ve işlevsellikler uyarınca Referandom’a yalnızca ticari
@@ -144,7 +143,7 @@ class Terms extends Component {
               izin verebilir:{" "}
             </p>
             <p>
-              ÖZET: Referandom'da içerik yayınladığınızda, Referandom Topluluk
+            <b>ÖZET:</b> Referandom'da içerik yayınladığınızda, Referandom Topluluk
               Kuralları ve Telif Hakkı / Ticari Marka Politikaları dahil olmak
               üzere çeşitli politikalarımıza lütfen saygı gösterin. • Tüm
               materyallerinizin ve materyallerinizi göndermenin sonuçlarının
@@ -155,7 +154,7 @@ class Terms extends Component {
               mülkiyet hakkını ihlal etmediğini beyan ve garanti etmektesiniz.{" "}
             </p>
             <p>
-              ÖZET: Gönderdiğiniz içeriğin belirli haklarını bize veriyorsunuz.
+            <b>ÖZET:</b> Gönderdiğiniz içeriğin belirli haklarını bize veriyorsunuz.
               İçeriğinizi artık görüntülememizi istemiyorsanız, içeriği
               Referandom’dan kaldırabilirsiniz. • Materyallerinizi Referandom
               üzerine göndererek, karşıya yükleyerek veya başka bir şekilde
@@ -188,7 +187,7 @@ class Terms extends Component {
               bildirimini kaldırmayacak veya gizlemeyeceksiniz.{" "}
             </p>
             <p>
-              ÖZET: Lütfen bizi hacklemeyin. • Referandom ile ilişkili herhangi
+            <b>ÖZET:</b> Lütfen bizi hacklemeyin. • Referandom ile ilişkili herhangi
               bir yazılımın kaynak koduna erişemez, kullanamaz, değiştiremez,
               kopyalayamaz, tersine mühendislik uygulayamaz veya başka bir
               şekilde türetemezsiniz; • Referandom'un bilgisayar sistemlerine
@@ -205,14 +204,14 @@ class Terms extends Component {
               yasaktır.{" "}
             </p>
             <p>
-              ÖZET: Lütfen izin almadan verilerimizi kazımayın. • Referandom
+            <b>ÖZET:</b> Lütfen izin almadan verilerimizi kazımayın. • Referandom
               tarafından açıkça izin verilmedikçe, veri kazımak veya indirmek
               için örümcekler, robotlar, tarayıcılar, veri madenciliği araçları
               veya benzerleri dahil olmak üzere otomatik araçlar
               kullanamazsınız;{" "}
             </p>
             <p>
-              ÖZET: Lütfen aldatmaca yapmayın. • Şartlar'da açıkça izin
+            <b>ÖZET:</b> Lütfen aldatmaca yapmayın. • Şartlar'da açıkça izin
               verilmedikçe veya Referandom'un önceden yazılı onayı alınmamışsa,
               yalnızca ticari nitelikte olan tüccar materyalleri aracılığıyla
               veya bunlarla para yatırmak, promosyon yapmak, reklam vermek
@@ -222,16 +221,15 @@ class Terms extends Component {
               belirtildiği üzere mal veya hizmet talep etmek yasaktır.{" "}
             </p>
             <p>
-              ÖZET: Lütfen, Referandom'da izin verilen ve yasaklanan davranışlar
+            <b>ÖZET:</b> Lütfen, Referandom'da izin verilen ve yasaklanan davranışlar
               hakkında daha fazla bilgi edinmek için Referandom Topluluk
               Kurallarını ziyaret edin.
             </p>
             • Zaman zaman güncellenen Referandom Topluluk Kurallarına uymayı
             kabul etmiş sayılırsınız.
-            <p>
-              3. Mobil Yazılım
+            <p><b>3. Mobil Yazılım</b>
               <p>
-                ÖZET: Mobil cihazlardayız! İşte birkaç mobile özel terim. Bir
+              <b>ÖZET:</b> Mobil cihazlardayız! İşte birkaç mobile özel terim. Bir
                 mobil cihaz ("Mobil Yazılım") aracılığıyla Referandom'a erişmek
                 için mevcut yazılımımızı kullanabilir. Mobil Yazılımı kullanmak
                 için mobil yazılımımız ile uyumlu bir mobil cihazınız olmalıdır.
@@ -274,10 +272,9 @@ class Terms extends Component {
                 girişimleriniz geçersizdir. Referandom, bu şartlar kapsamında
                 açıkça verilmeyen tüm hakları saklı tutar.{" "}
               </p>
-              <p>
-                4. Sorumluluk ve Onay
+              <p><b>4. Sorumluluk ve Onay</b>
                 <p>
-                  ÖZET: Belirli ortaklarla zaman zaman işbirliği yapabilmemize
+                <b>ÖZET:</b> Belirli ortaklarla zaman zaman işbirliği yapabilmemize
                   rağmen, Referandom’da karşılaşabileceğiniz belirli bir kişi
                   veya kuruluşu desteklemiyoruz. Referandom’da biriyle bağlantı
                   kurmayı seçerseniz, bu ilişki sizin sorumluluğunuzdadır ve
@@ -297,10 +294,9 @@ class Terms extends Component {
                   ve Referandom, üçüncü taraflarla yaptığınız işlemlere veya
                   anlaşmalara dahil değildir.{" "}
                 </p>
-                <p>
-                  5. Fikri Mülkiyet
+                <p><b>5. Fikri Mülkiyet</b>
                   <p>
-                    ÖZET: Kullanıcılarımızın, Referandom veya sebepler üzerine
+                  <b>ÖZET:</b> Kullanıcılarımızın, Referandom veya sebepler üzerine
                     içerik yayınlamak için yeterli haklara ve / veya izinlere
                     sahip olmaları gerekmektedir. İçeriğinizden herhangi
                     birinin, söz konusu içeriğe ilişkin haklarınızı veya
@@ -355,10 +351,9 @@ class Terms extends Component {
                     ihlal edildiği iddia edilen münhasır hakkın sahibi adına
                     hareket etme yetkisine sahip olduğunu ifade eder.
                   </p>
-                  <p>
-                    6. Tazminat
+                  <p><b>6. Tazminat</b>
                     <p>
-                      ÖZET: Bir kişi, Referandom'a yaptığınız bir şey yüzünden
+                    <b>ÖZET:</b> Bir kişi, Referandom'a yaptığınız bir şey yüzünden
                       Referandom'a karşı yasal işlem başlatırsa, bu masraftan
                       siz sorumlu olacaksınız. Resmi kapasitesinde hareket eden
                       bir devlet kurumu veya resmi görevlisiyseniz
@@ -375,9 +370,9 @@ class Terms extends Component {
                       ihlali; veya (e) üçüncü tarafların fikri mülkiyet,
                       gizlilik veya diğer haklarının ihlali.{" "}
                     </p>
-                    <p>7. Sorumluluk Reddi </p>
+                    <p><b>7. Sorumluluk Reddi</b> </p>
                     <p>
-                      ÖZET: Genç bir platformuz ve Referandom’u nasıl daha iyi
+                    <b>ÖZET:</b> Genç bir platformuz ve Referandom’u nasıl daha iyi
                       hale getireceğimize dair birçok planımız var. Daha fazla
                       özellik kat ettikçe ütülenecek bazı kıvrımlar olacak,
                       lütfen bizimle paylaşın. Bu nedenlerden ötürü, geçerli
@@ -406,17 +401,17 @@ class Terms extends Component {
                       HERHANGİ BİR YASAL, VERGİ VEYA DİĞER MESLEKİ TAVSİYE
                       İÇERMEDİĞİNİ KABUL ETMİŞ OLURSUNUZ.
                     </p>
-                    <p>8. Sorumluluk Sınırlaması </p>
+                    <p><b>8. Sorumluluk Sınırlaması</b> </p>
                     <p>
-                      ÖZET: Referandom deneyiminizi güvenli ve keyifli hale
+                    <b>ÖZET:</b> Referandom deneyiminizi güvenli ve keyifli hale
                       getirmek için çok çalışıyoruz. Ancak, Referandom’u (çoğu
                       Internet servisinde olduğu gibi) kendi sorumluluğunuzda
                       kullandığınızı ve herhangi bir doğrudan veya dolaylı
                       zarardan sorumlu tutulamayacağımızı lütfen unutmayın.{" "}
                     </p>
-                    <p>9. Bağlantılar </p>
+                    <p><b>9. Bağlantılar</b> </p>
                     <p>
-                      ÖZET: Referandom’un bir parçası olmayan Referandom ile
+                    <b>ÖZET:</b> Referandom’un bir parçası olmayan Referandom ile
                       ilgili linkleri ve diğer referansları görebilirsiniz. Aksi
                       belirtilmedikçe üçüncü taraflarla hiçbir ilgimizin
                       olmadığını unutmayın. Referandom kullanıcıları, Referandom
@@ -433,7 +428,7 @@ class Terms extends Component {
                       alan içeriği onayladığı, beyan ettiği, taahhüt ettiği veya
                       kabul ettiği anlamına gelmez veya ima etmez.{" "}
                     </p>
-                    <p>10. Anlaşma </p>
+                    <p><b>10. Anlaşma</b> </p>
                     <p>
                       Zaman zaman değiştirdiğimiz Şartlar ve Gizlilik Politikası
                       ve sizinle birlikte girdiğimiz diğer yazılı anlaşmalar siz
@@ -444,9 +439,9 @@ class Terms extends Component {
                       kalan hükümlerin geçerliliğini ve uygulanabilirliğini
                       etkilemez.{" "}
                     </p>
-                    <p>11. Değişiklikler </p>
+                    <p><b>11. Değişiklikler</b> </p>
                     <p>
-                      ÖZET: Bu dünyada değişmeyen tek şey değişmedir. Gelecekte,
+                    <b>ÖZET:</b> Bu dünyada değişmeyen tek şey değişmedir. Gelecekte,
                       güncellemek zorunda kalacağımız şeyler olabilir.
                       Yaptığımız zaman size bildirmek için elimizden gelenin en
                       iyisini yapacağız. Bu şartları herhangi bir zamanda
@@ -468,7 +463,7 @@ class Terms extends Component {
                       Referandom ayrıca, herhangi bir zamanda size bildirimde
                       bulunmaksızın Referandom’u değiştirme hakkını saklı tutar.{" "}
                     </p>
-                    <p>12. Genel </p>
+                    <p><b>12. Genel</b> </p>
                     <p>
                       Referandom’a bir işletme kuruluşu veya başka bir kuruluş
                       olarak kaydoluyorsanız, kuruluşu bu şartlara tabi kılma ve
@@ -480,7 +475,7 @@ class Terms extends Component {
                       başka bir tarafa bildirmeksizin veya izin vermeden
                       devredebilir.{" "}
                     </p>
-                    <p>13. Fesih </p>
+                    <p><b>13. Fesih</b> </p>
                     <p>
                       {" "}
                       Referandom, tamamen kendi takdirine bağlı olarak,

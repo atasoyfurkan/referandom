@@ -47,7 +47,7 @@ class Onerge extends Component {
           </p>
           <a href={this.props.data.url} className="onergeMetni">
             <i className="chain icon" />
-            Metnin tamamı
+            Metnin Tamamı
           </a>
           <div className="justify-content-center d-flex">
             {display && (

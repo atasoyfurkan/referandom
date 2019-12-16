@@ -95,9 +95,12 @@ class Home extends FormClass {
                 <div className="ui container a-text-align">
                   <div className="invisible mobile-hidden m-0 p-0">
                     <h2 className="ui inverted header">Giris yap</h2>
-                    <p className="ui inverted">Demokraside aktif ol!</p>
+                    <p className="ui inverted" >Demokraside aktif ol!</p>
                   </div>
-                  <h2 className="ui inverted header">
+                  <h2 className="ui inverted header"style={{ fontSize: "20px" }} >
+                  <i className="university icon" />Meclis gündemini takip et,
+                  </h2>
+                  <h2 className="ui inverted header"style={{ fontSize: "20px" }}>
                     <img
                       src="img/referandom-w.svg"
                       style={{
@@ -105,14 +108,12 @@ class Home extends FormClass {
                         height: "42px",
                         marginTop: "-10px"
                       }}
-                      alt=""
-                    />{" "}
-                    Siyasi olayları oyla,
+                      alt=""/>{" "} Oylamalara katıl,
                   </h2>
-                  <h2 className="ui inverted header">
-                    <i className="comment outline icon" /> Sebeplerini belirt,
+                  <h2 className="ui inverted header"style={{ fontSize: "20px" }}>
+                    <i className="comment outline icon" /> Gerekçeni belirt,
                   </h2>
-                  <h2 className="ui inverted header">
+                  <h2 className="ui inverted header"style={{ fontSize: "20px" }}>
                     <i className="users icon" /> Demokraside aktif ol!
                   </h2>
                 </div>

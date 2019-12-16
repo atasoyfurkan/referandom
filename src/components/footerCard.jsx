@@ -35,6 +35,9 @@ class Footer extends Component {
             <a className="item" href="/privacy">
               <span>Gizlilik Politikası</span>
             </a>
+            <a className="item" href="/aboutus">
+              <span>Hakkımızda</span>
+            </a>
             <a
               className="item"
               href="#"
