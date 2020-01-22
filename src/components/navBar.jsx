@@ -90,7 +90,11 @@ class NavBar extends FormClass {
             <div className="ui top fixed inverted borderless menu">
               <div className="ui container d-flex justify-content-center">
                 <a className="item logo" href="/">
-                  <img className="img" src={url + "img/logo.png"} alt="" />
+                  <img
+                    className="img"
+                    src="https://firebasestorage.googleapis.com/v0/b/refern-7c476.appspot.com/o/logo.png?alt=media&token=5d30e0e7-8deb-4030-860b-4917f6ea7025"
+                    alt=""
+                  />
                 </a>
                 {this.renderNavItems()}
               </div>
