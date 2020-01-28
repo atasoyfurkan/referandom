@@ -212,6 +212,7 @@ class VoteCard extends Component {
                                     element.owner._id === this.props.user._id
                                   }
                                   data={element}
+                                  history={this.props.history}
                                   onDelete={() => this.handleDelete(element)}
                                   onUpvote={() => this.handleUpvote(element)}
                                 />
@@ -230,6 +231,7 @@ class VoteCard extends Component {
                                     element.owner._id === this.props.user._id
                                   }
                                   data={element}
+                                  history={this.props.history}
                                   onDelete={() => this.handleDelete(element)}
                                   onUpvote={() => this.handleUpvote(element)}
                                 />

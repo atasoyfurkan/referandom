@@ -254,6 +254,7 @@ class VoteCardForAkis extends Component {
                 <Comment
                   data={this.props.data.comments[this.state.indexOfMaxAgree]}
                   best={true}
+                  history={this.props.history}
                   onUpvote={() =>
                     this.handleUpvote(
                       this.props.data.comments[this.state.indexOfMaxAgree]
@@ -265,6 +266,7 @@ class VoteCardForAkis extends Component {
                 <Comment
                   data={this.props.data.comments[this.state.indexOfMaxDisagree]}
                   best={true}
+                  history={this.props.history}
                   onUpvote={() =>
                     this.handleUpvote(
                       this.props.data.comments[this.state.indexOfMaxDisagree]
