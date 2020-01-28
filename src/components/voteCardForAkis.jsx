@@ -30,7 +30,10 @@ class VoteCardForAkis extends Component {
       labels: ["Katılıyorum", "Katılmıyorum"],
       datasets: [
         {
-          data: [this.props.data.agree, this.props.data.disagree],
+          data: [
+            this.props.data && this.props.data.agree,
+            this.props.data && this.props.data.disagree
+          ],
           backgroundColor: ["#09c635", "#d31021"]
         }
       ]
