@@ -21,6 +21,7 @@ class SidebarCustom extends Component {
   href = link => {
     this.props.history.push(link);
     window.scrollTo(0, 0);
+    this.props.handleSidebarClose();
   };
 
   render() {
@@ -146,7 +147,8 @@ class SidebarCustom extends Component {
 }
 const mapStateToProps = state => {
   return {
-    user: state.user.moreData
+    user: state.user.moreData,
+    history: state.ui.history
   };
 };
 
