@@ -53,7 +53,7 @@ export const getCurrentUserForProfileMoreDetails = () => {
 export const getUserForProfileMoreDetailsById = id => {
   return async dispatch => {
     const response = await http.get(apiEndpoint + "/me/" + id);
-    dispatch(setUserMore(response.data));
+    dispatch(setUser(response.data));
   };
 };
 

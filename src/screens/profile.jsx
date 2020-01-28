@@ -29,6 +29,12 @@ class Profile extends Component {
   };
 
   render() {
+    let user;
+    if (this.props.otherUser && this.props.mode === "visit")
+      user = this.props.user;
+    else if (this.props.user && this.props.mode !== "visit")
+      user = this.props.otherUser;
+
     return (
       <React.Fragment>
         <LoadingSpinner
@@ -40,14 +46,12 @@ class Profile extends Component {
               <main className="row justify-content-center d-flex">
                 <div className="col-11 col-sm-10 col-md-9 col-lg-6">
                   <ProfileCard
-                    visitedUser={
-                      this.props.mode === "visit" ? this.props.user : null
-                    }
+                    visitedUser={this.props.mode === "visit" ? user : null}
                     mode={this.props.mode}
                   />
 
-                  {this.props.user &&
-                    this.props.user.votedCards
+                  {user &&
+                    user.votedCards
                       .slice(0)
                       .reverse()
                       .map(
@@ -55,9 +59,7 @@ class Profile extends Component {
                           element.mainCard && (
                             <VoteCardForAkis
                               visitedUser={
-                                this.props.mode === "visit"
-                                  ? this.props.user
-                                  : null
+                                this.props.mode === "visit" ? user : null
                               }
                               key={element._id}
                               data={this.findVoteCard(element.mainCard._id)}
@@ -76,9 +78,7 @@ class Profile extends Component {
                   <div className="ui rail" style={{ width: "31.3%" }}>
                     <div className="ui sticky fixed top  a-sticky">
                       <ProfileCard
-                        visitedUser={
-                          this.props.mode === "visit" ? this.props.user : null
-                        }
+                        visitedUser={this.props.mode === "visit" ? user : null}
                         mode={this.props.mode}
                       />
                       <FooterCard />
@@ -86,8 +86,8 @@ class Profile extends Component {
                   </div>
                   <div className="five wide column sidebar mobile-hidden" />
                   <div className="eleven wide column" id="onergeler">
-                    {this.props.user &&
-                      this.props.user.votedCards
+                    {user &&
+                      user.votedCards
                         .slice(0)
                         .reverse()
                         .map(
@@ -95,9 +95,7 @@ class Profile extends Component {
                             element.mainCard && (
                               <VoteCardForAkis
                                 visitedUser={
-                                  this.props.mode === "visit"
-                                    ? this.props.user
-                                    : null
+                                  this.props.mode === "visit" ? user : null
                                 }
                                 key={element._id}
                                 data={this.findVoteCard(element.mainCard._id)}
@@ -121,6 +119,7 @@ class Profile extends Component {
 const mapStateToProps = state => {
   return {
     user: state.user.moreData,
+    otherUser: state.user.otherUser,
     data: state.voteCard.data,
     isLoaded: state.ui.isLoaded,
     isLoadedExtra: state.ui.isLoadedExtra
