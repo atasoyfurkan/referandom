@@ -10,15 +10,20 @@ class Footer extends Component {
     this.setState({ contactModalShow: false });
   };
 
+  href = link => {
+    this.props.history.push(link);
+    window.scrollTo(0, 0);
+  };
+
   render() {
     return (
       <React.Fragment>
         <footer id="profile-footer">
           <a
-            className={`img-cover ${
+            className={`img-cover cursor-point ${
               this.props.mode === "home" ? "d-none" : "d-block"
             }`}
-            href="/"
+            onClick={() => this.href("/")}
           >
             <img
               src="img/referandom-w.svg"
@@ -29,13 +34,22 @@ class Footer extends Component {
             />
           </a>
           <div className="ui inverted text">
-            <a className="item" href="/terms">
+            <a
+              className="item cursor-point"
+              onClick={() => this.href("/terms")}
+            >
               <span>Kullanım Şartları</span>
             </a>
-            <a className="item" href="/privacy">
+            <a
+              className="item cursor-point"
+              onClick={() => this.href("/privacy")}
+            >
               <span>Gizlilik Politikası</span>
             </a>
-            <a className="item" href="/aboutus">
+            <a
+              className="item cursor-point"
+              onClick={() => this.href("/aboutus")}
+            >
               <span>Hakkımızda</span>
             </a>
             <a

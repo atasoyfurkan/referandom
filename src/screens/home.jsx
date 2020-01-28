@@ -11,7 +11,8 @@ import {
   uiStartRegisterButton,
   uiStopRegisterButton,
   uiStartLoginButton,
-  uiStopLoginButton
+  uiStopLoginButton,
+  loadHistory
 } from "../store/actions/index";
 
 class Home extends FormClass {
@@ -34,6 +35,10 @@ class Home extends FormClass {
       .min(5)
       .label("Password")
   };
+
+  componentDidMount() {
+    this.props.onLoadHistory(this.props.history);
+  }
 
   register = async () => {
     try {
@@ -95,12 +100,19 @@ class Home extends FormClass {
                 <div className="ui container a-text-align">
                   <div className="invisible mobile-hidden m-0 p-0">
                     <h2 className="ui inverted header">Giris yap</h2>
-                    <p className="ui inverted" >Demokraside aktif ol!</p>
+                    <p className="ui inverted">Demokraside aktif ol!</p>
                   </div>
-                  <h2 className="ui inverted header"style={{ fontSize: "20px" }} >
-                  <i className="university icon" />Meclis gündemini takip et,
+                  <h2
+                    className="ui inverted header"
+                    style={{ fontSize: "20px" }}
+                  >
+                    <i className="university icon" />
+                    Meclis gündemini takip et,
                   </h2>
-                  <h2 className="ui inverted header"style={{ fontSize: "20px" }}>
+                  <h2
+                    className="ui inverted header"
+                    style={{ fontSize: "20px" }}
+                  >
                     <img
                       src="img/referandom-w.svg"
                       style={{
@@ -108,12 +120,20 @@ class Home extends FormClass {
                         height: "42px",
                         marginTop: "-10px"
                       }}
-                      alt=""/>{" "} Oylamalara katıl,
+                      alt=""
+                    />{" "}
+                    Oylamalara katıl,
                   </h2>
-                  <h2 className="ui inverted header"style={{ fontSize: "20px" }}>
+                  <h2
+                    className="ui inverted header"
+                    style={{ fontSize: "20px" }}
+                  >
                     <i className="comment outline icon" /> Gerekçeni belirt,
                   </h2>
-                  <h2 className="ui inverted header"style={{ fontSize: "20px" }}>
+                  <h2
+                    className="ui inverted header"
+                    style={{ fontSize: "20px" }}
+                  >
                     <i className="users icon" /> Demokraside aktif ol!
                   </h2>
                 </div>
@@ -239,7 +259,8 @@ const mapDispatchToProps = dispatch => {
     onStopRegisterButton: () => dispatch(uiStopRegisterButton()),
 
     onStartLoginButton: () => dispatch(uiStartLoginButton()),
-    onStopLoginButton: () => dispatch(uiStopLoginButton())
+    onStopLoginButton: () => dispatch(uiStopLoginButton()),
+    onLoadHistory: history => dispatch(loadHistory(history))
   };
 };
 

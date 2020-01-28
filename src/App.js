@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Route, Redirect, Switch } from "react-router-dom";
-import { getCurrentUser } from "./store/actions/index";
+import {
+  getCurrentUser,
+  getCurrentUserForProfileMoreDetails,
+  getData,
+  uiFinishLoading,
+  uiStartLoading
+} from "./store/actions/index";
 import ToastNotification from "./components/toastNotification";
 import SidebarCustom from "./components/sidebarCustom";
 import NavBar from "./components/navBar";
@@ -17,19 +23,20 @@ import VoteCard from "./screens/voteCard";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
+import ReactGA from "react-ga";
 
-
-import ReactGA from 'react-ga';
-
-  ReactGA.initialize('UA-154553324-2');
-  ReactGA.pageview('/');
-
+ReactGA.initialize("UA-154553324-2");
+ReactGA.pageview("/");
 
 class App extends Component {
   state = { navbarMargin: 0, sidebarShow: false, redirect: null };
 
   async componentDidMount() {
+    this.props.onUiStartLoading();
     await this.props.onGetCurrentUser();
+    await this.props.onGetCurrentUserForProfileMoreDetails();
+    await this.props.onGetData();
+    this.props.onUiFinishLoading();
   }
 
   handleSidebarShow = () => this.setState({ sidebarShow: true });
@@ -99,7 +106,13 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onGetCurrentUser: () => dispatch(getCurrentUser())
+    onGetCurrentUser: () => dispatch(getCurrentUser()),
+    onGetCurrentUserForProfileMoreDetails: () =>
+      dispatch(getCurrentUserForProfileMoreDetails()),
+    onGetData: () => dispatch(getData()),
+
+    onUiFinishLoading: () => dispatch(uiFinishLoading()),
+    onUiStartLoading: () => dispatch(uiStartLoading())
   };
 };
 

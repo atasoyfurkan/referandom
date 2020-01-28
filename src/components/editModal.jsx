@@ -224,7 +224,7 @@ class EditModal extends FormClass {
 const mapStateToProps = state => {
   return {
     saveButton: state.ui.saveButton,
-    user: state.user.data
+    user: state.auth.currentUser
   };
 };
 

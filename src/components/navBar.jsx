@@ -8,8 +8,7 @@ import FormClass from "./common/form";
 import {
   login,
   uiStartLoginButton,
-  uiStopLoginButton,
-  getCurrentUserWithDetails
+  uiStopLoginButton
 } from "../store/actions/index";
 import { url } from "../config.json";
 
@@ -29,10 +28,6 @@ class NavBar extends FormClass {
       .required()
       .label("Password")
   };
-
-  async componentDidMount() {
-    await this.props.onGetCurrentUserWithDetails();
-  }
 
   exitWarningModalClose = () => {
     this.setState({ exitWarningModalShow: false });
@@ -64,11 +59,11 @@ class NavBar extends FormClass {
   };
 
   loadUser = () => {
-    if (this.props.userWithDetails && !this.state.loaded) {
+    if (this.props.user && !this.state.loaded) {
       this.state.trigger = (
         <span>
           <img
-            src={this.props.userWithDetails.ppLink}
+            src={this.props.user.ppLink}
             className="ui avatar image"
             width="20"
             alt=""
@@ -80,6 +75,11 @@ class NavBar extends FormClass {
     }
   };
 
+  href = link => {
+    this.props.history.push(link);
+    window.scrollTo(0, 0);
+  };
+
   render() {
     this.loadUser();
 
@@ -89,7 +89,7 @@ class NavBar extends FormClass {
           <Menu className="a-body-bg" id="top">
             <div className="ui top fixed inverted borderless menu">
               <div className="ui container d-flex justify-content-center">
-                <a className="item logo" href="/">
+                <a className="item logo" onClick={() => this.href("/")}>
                   <img
                     className="img"
                     src="https://firebasestorage.googleapis.com/v0/b/refern-7c476.appspot.com/o/logo.png?alt=media&token=5d30e0e7-8deb-4030-860b-4917f6ea7025"
@@ -125,12 +125,11 @@ class NavBar extends FormClass {
                 @{user.username}
               </Dropdown.Header>
               <Dropdown.Divider />
-              <Dropdown.Item href="/profile">
+              <Dropdown.Item onClick={() => this.href("/profile")}>
                 <i className="fa fa-user pr-3" />
                 Profil
               </Dropdown.Item>
               <Dropdown.Item
-                href="#"
                 onClick={() => this.setState({ exitWarningModalShow: true })}
               >
                 <i className="fa fa-times-circle pr-3" />
@@ -195,15 +194,14 @@ class NavBar extends FormClass {
 
 const mapStateToProps = state => {
   return {
-    userWithDetails: state.user.data,
     user: state.auth.currentUser,
-    loginButton: state.ui.loginButton
+    loginButton: state.ui.loginButton,
+    history: state.ui.history
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    onGetCurrentUserWithDetails: () => dispatch(getCurrentUserWithDetails()),
     onLogin: (username, password) => dispatch(login(username, password)),
 
     onStartLoginButton: () => dispatch(uiStartLoginButton()),

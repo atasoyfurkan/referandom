@@ -102,7 +102,7 @@ class ProfileCard extends Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user.data
+    user: state.user.moreData
   };
 };
 

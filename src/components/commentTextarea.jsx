@@ -100,7 +100,7 @@ class CommentTextarea extends Component {
 const mapStateToProps = state => {
   return {
     commentButton: state.ui.commentButton,
-    user: state.user.data
+    user: state.user.moreData
   };
 };
 

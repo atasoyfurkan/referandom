@@ -1,6 +1,9 @@
 import {
+  LOAD_HISTORY,
   UI_FINISH_LOADING,
   UI_START_LOADING,
+  UI_FINISH_LOADING_EXTRA,
+  UI_START_LOADING_EXTRA,
   UI_SHOW_TOAST,
   UI_CLOSE_TOAST,
   UI_START_COMMENT_BUTTON,
@@ -23,6 +26,13 @@ export const uiScrollPosition = scrollPosition => {
   };
 };
 
+export const loadHistory = data => {
+  return {
+    type: LOAD_HISTORY,
+    data: data
+  };
+};
+
 export const uiFinishLoading = () => {
   return {
     type: UI_FINISH_LOADING
@@ -31,6 +41,16 @@ export const uiFinishLoading = () => {
 export const uiStartLoading = () => {
   return {
     type: UI_START_LOADING
+  };
+};
+export const uiFinishLoadingExtra = () => {
+  return {
+    type: UI_FINISH_LOADING_EXTRA
+  };
+};
+export const uiStartLoadingExtra = () => {
+  return {
+    type: UI_START_LOADING_EXTRA
   };
 };
 

@@ -1,6 +1,9 @@
 import {
+  LOAD_HISTORY,
   UI_FINISH_LOADING,
   UI_START_LOADING,
+  UI_FINISH_LOADING_EXTRA,
+  UI_START_LOADING_EXTRA,
   UI_SHOW_TOAST,
   UI_CLOSE_TOAST,
   UI_START_COMMENT_BUTTON,
@@ -18,6 +21,7 @@ import {
 
 const initialState = {
   isLoaded: false,
+  isLoadedExtra: false,
   toast: {
     text: "Beklenmedik bir hata gerçekleşti",
     show: false,
@@ -28,7 +32,8 @@ const initialState = {
   registerButton: false,
   saveButton: false,
   uiVoteCards: [],
-  scrollPosition: 0
+  scrollPosition: 0,
+  history: undefined
 };
 
 const reducer = (state = initialState, action) => {
@@ -37,6 +42,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         scrollPosition: action.scrollPosition
+      };
+    case LOAD_HISTORY:
+      return {
+        ...state,
+        history: action.data
       };
     case UI_FINISH_LOADING:
       return {
@@ -47,6 +57,16 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         isLoaded: false
+      };
+    case UI_FINISH_LOADING_EXTRA:
+      return {
+        ...state,
+        isLoadedExtra: true
+      };
+    case UI_START_LOADING_EXTRA:
+      return {
+        ...state,
+        isLoadedExtra: false
       };
     case UI_SHOW_TOAST:
       return {

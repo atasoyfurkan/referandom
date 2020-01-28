@@ -5,23 +5,22 @@ import ProfileCard from "../components/profileCard";
 import FooterCard from "../components/footerCard";
 import LoadingSpinner from "../components/loadingSpinner";
 import {
-  getData,
   getUserForProfileMoreDetailsById,
-  getCurrentUserForProfileMoreDetails,
-  uiFinishLoading,
-  uiStartLoading
+  uiFinishLoadingExtra,
+  uiStartLoadingExtra,
+  loadHistory
 } from "../store/actions/index";
 
 class Profile extends Component {
   async componentDidMount() {
-    this.props.onUiStartLoading();
+    this.props.onLoadHistory(this.props.history);
+
+    this.props.onUiStartLoadingExtra();
     if (this.props.mode === "visit") {
       const id = this.props.history.location.pathname.slice(7);
       await this.props.onGetUserWithDetailsById(id);
-    } else await this.props.onGetCurrentUserForProfileMoreDetails();
-
-    await this.props.onGetData();
-    this.props.onUiFinishLoading();
+    }
+    this.props.onUiFinishLoadingExtra();
   }
 
   findVoteCard = id => {
@@ -32,8 +31,10 @@ class Profile extends Component {
   render() {
     return (
       <React.Fragment>
-        <LoadingSpinner isLoaded={this.props.isLoaded} />
-        {this.props.isLoaded && (
+        <LoadingSpinner
+          isLoaded={this.props.isLoaded && this.props.isLoadedExtra}
+        />
+        {this.props.isLoaded && this.props.isLoadedExtra && (
           <React.Fragment>
             <section className="desktop-hidden">
               <main className="row justify-content-center d-flex">
@@ -121,7 +122,8 @@ const mapStateToProps = state => {
   return {
     user: state.user.moreData,
     data: state.voteCard.data,
-    isLoaded: state.ui.isLoaded
+    isLoaded: state.ui.isLoaded,
+    isLoadedExtra: state.ui.isLoadedExtra
   };
 };
 
@@ -129,12 +131,10 @@ const mapDispatchToProps = dispatch => {
   return {
     onGetUserWithDetailsById: id =>
       dispatch(getUserForProfileMoreDetailsById(id)),
-    onGetCurrentUserForProfileMoreDetails: () =>
-      dispatch(getCurrentUserForProfileMoreDetails()),
-    onGetData: () => dispatch(getData()),
 
-    onUiFinishLoading: () => dispatch(uiFinishLoading()),
-    onUiStartLoading: () => dispatch(uiStartLoading())
+    onUiFinishLoadingExtra: () => dispatch(uiFinishLoadingExtra()),
+    onUiStartLoadingExtra: () => dispatch(uiStartLoadingExtra()),
+    onLoadHistory: history => dispatch(loadHistory(history))
   };
 };
 

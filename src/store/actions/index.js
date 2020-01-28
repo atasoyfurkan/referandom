@@ -6,8 +6,11 @@ export {
   setVoteCard
 } from "./voteCard";
 export {
+  loadHistory,
   uiFinishLoading,
   uiStartLoading,
+  uiFinishLoadingExtra,
+  uiStartLoadingExtra,
   uiShowToast,
   uiCloseToast,
   uiStartCommentButton,

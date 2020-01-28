@@ -1,6 +1,12 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { loadHistory } from "../store/actions/index";
 
 class Terms extends Component {
+  componentDidMount() {
+    this.props.onLoadHistory(this.props.history);
+  }
+
   render() {
     return (
       <div className="a-container text-white d-flex justify-content-center">
@@ -74,7 +80,7 @@ class Terms extends Component {
             sonlandırmak dışında, hizmetle ilgili duyurular ve yönetim mesajları
             gibi belirli iletişimleri almayı seçemezsiniz.{" "}
           </p>
-          <p><b>2. Kabul Edilebilir Kullanım</b> 
+          <p><b>2. Kabul Edilebilir Kullanım</b>
             <p>
             <b>ÖZET:</b> Referandom kullanırken sağduyunuzu kullanın. Herkesin
               deneyimini güvenli ve keyifli hale getirmeye yardımcı olur.
@@ -500,4 +506,14 @@ class Terms extends Component {
     );
   }
 }
-export default Terms;
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onLoadHistory: history => dispatch(loadHistory(history))
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Terms);

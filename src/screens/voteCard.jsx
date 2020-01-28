@@ -9,8 +9,6 @@ import LoadingSpinner from "../components/loadingSpinner";
 import OnergeExpired from "../components/onergeExpired";
 import logger from "../services/logService";
 import {
-  uiStartLoading,
-  uiFinishLoading,
   updateVoteCard,
   updateUser,
   updateComment,
@@ -18,12 +16,12 @@ import {
   addCommentForOneVoteCard,
   upvoteCommentForOneVoteCard,
   handleShowToast,
-  getVoteCardById,
-  getCurrentUserWithDetails
+  loadHistory
 } from "../store/actions/index";
 
 class VoteCard extends Component {
   state = {
+    data: null,
     display: false,
     expand: true,
     vote: null,
@@ -37,18 +35,24 @@ class VoteCard extends Component {
       }
     }
   };
-  async componentWillMount() {
-    this.props.onUiStartLoading();
+
+  componentDidMount() {
+    this.props.onLoadHistory(this.props.history);
+  }
+
+  loadData() {
+    if (this.state.data || !this.props.isLoaded) return;
+
     const id = this.props.history.location.pathname.slice(8);
-    await this.props.onGetCurrentUserWithDetails();
-    await this.props.onGetVoteCardById(id);
+    const data = this.props.data.find(item => item._id === id);
+    this.setState({ data });
 
     this.setState({
       chartData: {
         labels: ["Katılıyorum", "Katılmıyorum"],
         datasets: [
           {
-            data: [this.props.data.agree, this.props.data.disagree],
+            data: [data.agree, data.disagree],
             backgroundColor: ["#09c635", "#d31021"]
           }
         ]
@@ -58,8 +62,7 @@ class VoteCard extends Component {
     let index = -1;
     if (this.props.user)
       this.props.user.votedCards.forEach((value, i) => {
-        if (value.mainCard && value.mainCard._id === this.props.data._id)
-          index = i;
+        if (value.mainCard && value.mainCard._id === data._id) index = i;
       });
 
     if (index !== -1) {
@@ -68,14 +71,13 @@ class VoteCard extends Component {
     }
     if (this.props.user) this.setState({ expand: true });
     this.setState({ display: true });
-    this.props.onUiFinishLoading();
   }
 
   handleVote = async vote => {
     this.setState({ vote });
-    const voteCard = { ...this.props.data };
+    const voteCard = { ...this.state.data };
     voteCard[vote ? "agree" : "disagree"] =
-      this.props.data[vote ? "agree" : "disagree"] + 1;
+      this.state.data[vote ? "agree" : "disagree"] + 1;
     const index = vote ? 0 : 1;
 
     const chartData = { ...this.state.chartData };
@@ -114,7 +116,7 @@ class VoteCard extends Component {
       text: text,
       vote: this.state.vote,
       upvote: 0,
-      mainCardId: this.props.data._id,
+      mainCardId: this.state.data._id,
       upvotedUsers: []
     };
     await this.props.onAddCommentForOneVoteCard(comment);
@@ -133,7 +135,7 @@ class VoteCard extends Component {
 
   handleDelete = async comment => {
     try {
-      await this.props.onDeleteComment(comment, this.props.data._id);
+      await this.props.onDeleteComment(comment, this.state.data._id);
       this.props.onShowToast("Yorum başarıyla silindi", "green");
     } catch (error) {
       this.props.onShowToast("Yorum silinemedi", "red");
@@ -142,7 +144,7 @@ class VoteCard extends Component {
 
   handleComments = vote => {
     let comments = [];
-    this.props.data.comments
+    this.state.data.comments
       .slice(0)
       .reverse()
       .forEach(item => {
@@ -154,27 +156,28 @@ class VoteCard extends Component {
   };
 
   render() {
+    this.loadData();
     return (
       <React.Fragment>
         <LoadingSpinner isLoaded={this.props.isLoaded} />
-        {this.props.isLoaded && this.props.data && (
+        {this.props.isLoaded && this.state.data && (
           <main
             className="row justify-content-center d-flex"
             style={{ marginTop: "70px" }}
           >
             <div className="col-11 col-sm-10 col-md-9 col-lg-6" id="onergeler">
               <div className="onerge">
-                {!this.props.data.expired && (
+                {!this.state.data.expired && (
                   <Onerge
-                    data={this.props.data}
+                    data={this.state.data}
                     display={this.state.display}
                     chartData={this.state.chartData}
                     chartOptions={this.state.chartOptions}
                   />
                 )}
-                {this.props.data.expired && (
+                {this.state.data.expired && (
                   <OnergeExpired
-                    data={this.props.data}
+                    data={this.state.data}
                     display={this.state.display}
                     chartData={this.state.chartData}
                     chartOptions={this.state.chartOptions}
@@ -187,16 +190,16 @@ class VoteCard extends Component {
                   onClick={this.handleVote}
                 />
                 <div className={`d-${this.state.display ? "block" : "none"}`}>
-                  {!this.props.data.expired && (
+                  {!this.state.data.expired && (
                     <CommentTextarea
-                      data={this.props.data}
+                      data={this.state.data}
                       vote={this.state.vote}
                       onAddReason={this.handleAddComment}
                     />
                   )}
-                  <SharePanel data={this.props.data} vote={this.state.vote} />
+                  <SharePanel data={this.state.data} vote={this.state.vote} />
 
-                  {this.props.data.comments[0] && (
+                  {this.state.data.comments[0] && (
                     <div className="row">
                       <div className="col-md-6 yorumlar">
                         {this.handleComments(true).map(
@@ -248,16 +251,14 @@ class VoteCard extends Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user.data,
-    data: state.voteCard.voteCard,
+    user: state.user.moreData,
+    data: state.voteCard.data,
     isLoaded: state.ui.isLoaded
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    onUiStartLoading: () => dispatch(uiStartLoading()),
-    onUiFinishLoading: () => dispatch(uiFinishLoading()),
     onUpdateVoteCard: voteCard => dispatch(updateVoteCard(voteCard)),
     onUpdateUser: user => dispatch(updateUser(user)),
     onAddCommentForOneVoteCard: comment =>
@@ -267,8 +268,7 @@ const mapDispatchToProps = dispatch => {
     onUpvoteCommentForOneVoteCard: comment =>
       dispatch(upvoteCommentForOneVoteCard(comment)),
     onShowToast: (text, variant) => dispatch(handleShowToast(text, variant)),
-    onGetVoteCardById: id => dispatch(getVoteCardById(id)),
-    onGetCurrentUserWithDetails: () => dispatch(getCurrentUserWithDetails())
+    onLoadHistory: history => dispatch(loadHistory(history))
   };
 };
 

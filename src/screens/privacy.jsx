@@ -1,11 +1,19 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { loadHistory } from "../store/actions/index";
 
 class Privacy extends Component {
+  componentDidMount() {
+    this.props.onLoadHistory(this.props.history);
+  }
+
   render() {
     return (
       <div className=" a-container text-white d-flex justify-content-center">
         <p>
-          <p><b>1.TOPLADIĞIMIZ VE KULLANDIĞIMIZ BİLGİLER</b> </p>
+          <p>
+            <b>1.TOPLADIĞIMIZ VE KULLANDIĞIMIZ BİLGİLER</b>{" "}
+          </p>
           <p>
             {" "}
             Referandom’daki deneyimizi iyileştirmek ve geliştirmek için bazı
@@ -28,7 +36,9 @@ class Privacy extends Component {
             kalınmıştır. Bu çerezler sayfaya bir sonraki girişinizde sizi
             tanımamızı sağlar.{" "}
           </p>
-          <p><b>2. PAYLAŞABİLDİĞİMİZ BİLGİLER</b></p>
+          <p>
+            <b>2. PAYLAŞABİLDİĞİMİZ BİLGİLER</b>
+          </p>
           <p>
             Referandom bir toplumsal dayanışma platformudur. Arama motorlarının
             sonuçlarında kullanıcı adınız, profil fotoğrafınız ve hareketleriniz
@@ -36,7 +46,11 @@ class Privacy extends Component {
             paylaşabiliriz, Kampanya sponsorlarıyla Kampanyanın hedef kitlesiyle
             ve sahibi ile İş ortaklarımızla Herhangi bir hukuk sürecinde{" "}
           </p>
-          <p><b>3. BİLGİLERİNİZİN DEPOLANMASI VE GÜVENLİĞİNİZ BİZİM İÇİN ÖNEMLİ</b></p>
+          <p>
+            <b>
+              3. BİLGİLERİNİZİN DEPOLANMASI VE GÜVENLİĞİNİZ BİZİM İÇİN ÖNEMLİ
+            </b>
+          </p>
           <p>
             Referandom bilgilerinizin güvenliğini önemser Lütfen hesabınızı
             güçlü bir şifreyle koruyun ve herhangi bir şüpheli aktivitede bize
@@ -44,7 +58,9 @@ class Privacy extends Component {
             Cumhuriyeti yasalarında belirtildiği üzere bazı bilgilerinizi
             izniniz olmaksızın bazı kurumlarla paylaşma hakkını saklı tutar.{" "}
           </p>
-          <p><b>4. 18 YAŞINDAN KÜÇÜK KULLANICILAR</b></p>
+          <p>
+            <b>4. 18 YAŞINDAN KÜÇÜK KULLANICILAR</b>
+          </p>
           <p>
             İçeriklerimiz 18 yaş altı kullanıcıları hedef almamakla beraber,
             kullanıcılar paylaştığı içerik ve yorumlardan kendileri sorumludur.
@@ -52,7 +68,9 @@ class Privacy extends Component {
             şekilde temizlemeye çalışıyoruz, bu konu ile alakalı
             destek@referandom.com ‘dan bize ulaşabilirsiniz.
           </p>
-          <p><b>5. GÜNCELLEME VE DEĞİŞTİRME</b></p>
+          <p>
+            <b>5. GÜNCELLEME VE DEĞİŞTİRME</b>
+          </p>
           <p>
             İşbu sözleşmede yer alan maddeleri değiştirme ve düzenleme hakkımızı
             saklı tutarız. Sözleşmedeki maddelere uymayan kullanıcıların
@@ -65,4 +83,14 @@ class Privacy extends Component {
     );
   }
 }
-export default Privacy;
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onLoadHistory: history => dispatch(loadHistory(history))
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Privacy);

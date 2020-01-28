@@ -18,6 +18,11 @@ class SidebarCustom extends Component {
     this.setState({ exitWarningModalShow: false });
   };
 
+  href = link => {
+    this.props.history.push(link);
+    window.scrollTo(0, 0);
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -38,7 +43,7 @@ class SidebarCustom extends Component {
               style={{ position: "fixed" }}
             >
               <div className="d-flex justify-content-start mt-4 ml-4 mb-2">
-                <a href="/profile">
+                <a onClick={() => this.href("/profile")}>
                   <img
                     src={this.props.user.ppLink}
                     style={{
@@ -59,25 +64,41 @@ class SidebarCustom extends Component {
                 <p className="text-muted">@{this.props.user.username}</p>
               </div>
 
-              <Menu.Item className="p-4" as="a" href="/profile">
+              <Menu.Item
+                className="p-4"
+                as="a"
+                onClick={() => this.href("/profile")}
+              >
                 <List className="d-flex justify-content-start" size="huge">
                   <Icon className="mr-3" name="user" />
                   Profil
                 </List>
               </Menu.Item>
-              <Menu.Item className="p-4" as="a" href="/terms">
+              <Menu.Item
+                className="p-4"
+                as="a"
+                onClick={() => this.href("/terms")}
+              >
                 <List className="d-flex justify-content-start" size="huge">
                   <Icon className="mr-3" name="file alternate" />
                   Kullanım Şartları
                 </List>
               </Menu.Item>
-              <Menu.Item className="p-4" as="a" href="/privacy">
+              <Menu.Item
+                className="p-4"
+                as="a"
+                onClick={() => this.href("/privacy")}
+              >
                 <List className="d-flex justify-content-start" size="huge">
                   <Icon className="mr-3" name="privacy" />
                   Gizlilik Politikası
                 </List>
               </Menu.Item>
-              <Menu.Item className="p-4" as="a" href="/aboutus">
+              <Menu.Item
+                className="p-4"
+                as="a"
+                onClick={() => this.href("/aboutus")}
+              >
                 <List className="d-flex justify-content-start" size="huge">
                   <Icon className="mr-3" name="users" />
                   Hakkımızda
@@ -125,7 +146,7 @@ class SidebarCustom extends Component {
 }
 const mapStateToProps = state => {
   return {
-    user: state.user.data
+    user: state.user.moreData
   };
 };
 

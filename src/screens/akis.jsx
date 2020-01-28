@@ -4,19 +4,11 @@ import VoteCardForAkis from "../components/voteCardForAkis";
 import ProfileCard from "../components/profileCard";
 import FooterCard from "../components/footerCard";
 import LoadingSpinner from "../components/loadingSpinner";
-import {
-  getData,
-  getCurrentUserWithDetails,
-  uiFinishLoading,
-  uiStartLoading
-} from "../store/actions/index";
+import { loadHistory } from "../store/actions/index";
 
 class Akis extends Component {
-  async componentDidMount() {
-    this.props.onUiStartLoading();
-    await this.props.onGetCurrentUserWithDetails();
-    await this.props.onGetData();
-    this.props.onUiFinishLoading();
+  componentDidMount() {
+    this.props.onLoadHistory(this.props.history);
   }
 
   render() {
@@ -47,7 +39,7 @@ class Akis extends Component {
                   <div className="ui rail" style={{ width: "31.3%" }}>
                     <div className="ui sticky fixed top  a-sticky">
                       <ProfileCard mode="akis" />
-                      <FooterCard />
+                      <FooterCard history={this.props.history} />
                     </div>
                   </div>
                   <div className="five wide column sidebar mobile-hidden" />
@@ -75,7 +67,7 @@ class Akis extends Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user.data,
+    user: state.user.moreData,
     data: state.voteCard.data,
     isLoaded: state.ui.isLoaded
   };
@@ -83,10 +75,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onGetCurrentUserWithDetails: () => dispatch(getCurrentUserWithDetails()),
-    onGetData: () => dispatch(getData()),
-    onUiFinishLoading: () => dispatch(uiFinishLoading()),
-    onUiStartLoading: () => dispatch(uiStartLoading())
+    onLoadHistory: history => dispatch(loadHistory(history))
   };
 };
 

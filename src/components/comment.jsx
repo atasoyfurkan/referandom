@@ -73,7 +73,7 @@ class Comment extends Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user.data
+    user: state.user.moreData
   };
 };
 

@@ -148,6 +148,7 @@ class VoteCardForAkis extends Component {
     if (this.props.visitedUser)
       window.location = `${url}onerge/${this.props.data._id}`;
     else this.props.history.push(`onerge/${this.props.data._id}`);
+    window.scrollTo(0, 0);
   };
 
   handleAddComment = async text => {
@@ -287,7 +288,7 @@ class VoteCardForAkis extends Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user.data,
+    user: state.user.moreData,
     uiVoteCards: state.ui.uiVoteCards,
     scrollPosition: state.ui.scrollPosition
   };
