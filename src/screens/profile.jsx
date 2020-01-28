@@ -31,9 +31,9 @@ class Profile extends Component {
   render() {
     let user;
     if (this.props.otherUser && this.props.mode === "visit")
-      user = this.props.user;
-    else if (this.props.user && this.props.mode !== "visit")
       user = this.props.otherUser;
+    else if (this.props.user && this.props.mode !== "visit")
+      user = this.props.user;
 
     return (
       <React.Fragment>
