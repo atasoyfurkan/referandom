@@ -12,11 +12,6 @@ class Comment extends Component {
       );
   }
 
-  href = link => {
-    this.props.history.push(link);
-    window.scrollTo(0, 0);
-  };
-
   render() {
     const { owner, text, upvote, vote } = this.props.data;
 
@@ -28,10 +23,7 @@ class Comment extends Component {
               vote ? "green" : "red"
             }`}
           >
-            <a
-              className="info"
-              onClick={() => this.href(`${url}visit/${owner._id}`)}
-            >
+            <a className="info" href={`${url}visit/${owner._id}`}>
               <div className="ui avatar image">
                 <img src={owner.ppLink} alt="" />
               </div>
