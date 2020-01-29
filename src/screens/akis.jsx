@@ -21,7 +21,7 @@ class Akis extends Component {
               <main className="row justify-content-center d-flex">
                 <div className="col-11 col-sm-10 col-md-9 col-lg-6">
                   {this.props.data
-                    .slice(0, 10)
+                    .slice(0)
                     .reverse()
                     .map(element => (
                       <VoteCardForAkis
@@ -45,7 +45,7 @@ class Akis extends Component {
                   <div className="five wide column sidebar mobile-hidden" />
                   <div className="eleven wide column" id="onergeler">
                     {this.props.data
-                      .slice(0, 10)
+                      .slice(0)
                       .reverse()
                       .map(element => (
                         <VoteCardForAkis

@@ -35,7 +35,7 @@ export const getCurrentUserWithDetails = () => {
     const currentUser = await dispatch(getCurrentUser());
     if (currentUser) {
       const response = await http.get(apiEndpoint + "/" + currentUser._id);
-      dispatch(setUser(response.data));
+      dispatch(setUserMore(response.data));
     }
   };
 };

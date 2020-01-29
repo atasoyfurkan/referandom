@@ -56,7 +56,8 @@ class Profile extends Component {
                       .reverse()
                       .map(
                         element =>
-                          element.mainCard && (
+                          element.mainCard &&
+                          this.findVoteCard(element.mainCard._id) && (
                             <VoteCardForAkis
                               visitedUser={
                                 this.props.mode === "visit" ? user : null
@@ -92,7 +93,8 @@ class Profile extends Component {
                         .reverse()
                         .map(
                           element =>
-                            element.mainCard && (
+                            element.mainCard &&
+                            this.findVoteCard(element.mainCard._id) && (
                               <VoteCardForAkis
                                 visitedUser={
                                   this.props.mode === "visit" ? user : null

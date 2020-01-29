@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Route, Redirect, Switch } from "react-router-dom";
 import {
   getCurrentUser,
-  getCurrentUserForProfileMoreDetails,
+  getCurrentUserWithDetails,
   getData,
   uiFinishLoading,
   uiStartLoading
@@ -34,8 +34,8 @@ class App extends Component {
   async componentDidMount() {
     this.props.onUiStartLoading();
     await this.props.onGetCurrentUser();
-    await this.props.onGetCurrentUserForProfileMoreDetails();
-    await this.props.onGetData();
+    await this.props.getCurrentUserWithDetails();
+    await this.props.onGetData(10);
     this.props.onUiFinishLoading();
   }
 
@@ -107,9 +107,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onGetCurrentUser: () => dispatch(getCurrentUser()),
-    onGetCurrentUserForProfileMoreDetails: () =>
-      dispatch(getCurrentUserForProfileMoreDetails()),
-    onGetData: () => dispatch(getData()),
+    getCurrentUserWithDetails: () => dispatch(getCurrentUserWithDetails()),
+    onGetData: numberOfVoteCards => dispatch(getData(numberOfVoteCards)),
 
     onUiFinishLoading: () => dispatch(uiFinishLoading()),
     onUiStartLoading: () => dispatch(uiStartLoading())

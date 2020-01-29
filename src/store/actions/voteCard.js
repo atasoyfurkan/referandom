@@ -18,9 +18,12 @@ export const setVoteCard = data => {
   };
 };
 
-export const getData = () => {
+export const getData = numberOfVoteCards => {
   return async dispatch => {
-    const respond = await http.get(apiEndpoint);
+    let respond;
+    if (numberOfVoteCards)
+      respond = await http.get(apiEndpoint + "/" + numberOfVoteCards);
+    else respond = await http.get(apiEndpoint);
     dispatch(stateData(respond.data));
     return respond;
   };
