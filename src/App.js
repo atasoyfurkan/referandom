@@ -20,7 +20,6 @@ import Terms from "./screens/terms";
 import Privacy from "./screens/privacy";
 import AboutUs from "./screens/aboutus";
 import VoteCard from "./screens/voteCard";
-import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 import ReactGA from "react-ga";

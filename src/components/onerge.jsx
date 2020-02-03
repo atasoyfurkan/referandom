@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Doughnut } from "react-chartjs-2";
-import { url } from "../config.json";
 
 class Onerge extends Component {
   render() {
