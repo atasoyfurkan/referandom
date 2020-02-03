@@ -39,6 +39,5 @@ export const getVoteCardById = id => {
 export const updateVoteCard = voteCard => {
   return async dispatch => {
     const response = await http.put(apiEndpoint + "/" + voteCard._id, voteCard);
-    console.log(voteCard);
   };
 };

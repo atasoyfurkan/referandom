@@ -12,9 +12,9 @@ import {
   updateVoteCard,
   updateUser,
   updateComment,
-  deleteCommentForOneVoteCard,
-  addCommentForOneVoteCard,
-  upvoteCommentForOneVoteCard,
+  deleteComment,
+  addComment,
+  upvoteComment,
   handleShowToast,
   loadHistory
 } from "../store/actions/index";
@@ -119,7 +119,8 @@ class VoteCard extends Component {
       mainCardId: this.state.data._id,
       upvotedUsers: []
     };
-    await this.props.onAddCommentForOneVoteCard(comment);
+    const id = this.props.history.location.pathname.slice(8);
+    await this.props.onAddComment(comment, id);
   };
 
   handleUpvote = async comment => {
@@ -127,8 +128,8 @@ class VoteCard extends Component {
       this.props.onShowToast("Destekleyebilmek için giriş yapınız", "red");
       return;
     }
-
-    this.props.onUpvoteCommentForOneVoteCard(comment);
+    const id = this.props.history.location.pathname.slice(8);
+    this.props.onUpvoteComment(comment, id);
     this.forceUpdate();
     await this.props.onUpdateComment(comment);
   };
@@ -263,12 +264,10 @@ const mapDispatchToProps = dispatch => {
   return {
     onUpdateVoteCard: voteCard => dispatch(updateVoteCard(voteCard)),
     onUpdateUser: user => dispatch(updateUser(user)),
-    onAddCommentForOneVoteCard: comment =>
-      dispatch(addCommentForOneVoteCard(comment)),
+    onAddComment: (comment, id) => dispatch(addComment(comment, id)),
     onUpdateComment: comment => dispatch(updateComment(comment)),
-    onDeleteComment: comment => dispatch(deleteCommentForOneVoteCard(comment)),
-    onUpvoteCommentForOneVoteCard: comment =>
-      dispatch(upvoteCommentForOneVoteCard(comment)),
+    onDeleteComment: (comment, id) => dispatch(deleteComment(comment, id)),
+    onUpvoteComment: (comment, id) => dispatch(upvoteComment(comment, id)),
     onShowToast: (text, variant) => dispatch(handleShowToast(text, variant)),
     onLoadHistory: history => dispatch(loadHistory(history))
   };

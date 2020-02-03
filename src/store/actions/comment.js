@@ -16,7 +16,7 @@ export const addComment = (comment, voteCardId) => {
 
     dispatch(stateData(data));
 
-    let user = { ...getState().user.data };
+    let user = { ...getState().user.moreData };
     user.numberOfComment = user.numberOfComment + 1;
     dispatch(updateUser(user));
   };
@@ -33,7 +33,7 @@ export const addCommentForOneVoteCard = comment => {
 
     dispatch(setVoteCard(data));
 
-    let user = { ...getState().user.data };
+    let user = { ...getState().user.moreData };
     user.numberOfComment = user.numberOfComment + 1;
     dispatch(updateUser(user));
   };
@@ -97,14 +97,14 @@ const handleUpvote = (comment, data, state) => {
   });
 
   const indexOfUser = data.comments[index].upvotedUsers.indexOf(
-    state.user.data._id
+    state.user.moreData._id
   );
   if (indexOfUser !== -1) {
     data.comments[index].upvote--;
     data.comments[index].upvotedUsers.splice(indexOfUser);
   } else {
     data.comments[index].upvote++;
-    data.comments[index].upvotedUsers.push(state.user.data._id);
+    data.comments[index].upvotedUsers.push(state.user.moreData._id);
   }
 };
 
