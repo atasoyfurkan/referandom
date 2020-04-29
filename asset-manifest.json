@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/referandom/static/css/main.f57c73b3.chunk.css",
+    "main.js": "/referandom/static/js/main.24489687.chunk.js",
+    "main.js.map": "/referandom/static/js/main.24489687.chunk.js.map",
+    "runtime~main.js": "/referandom/static/js/runtime~main.9f11a388.js",
+    "runtime~main.js.map": "/referandom/static/js/runtime~main.9f11a388.js.map",
+    "static/css/2.f9c6d729.chunk.css": "/referandom/static/css/2.f9c6d729.chunk.css",
+    "static/js/2.fd2caa04.chunk.js": "/referandom/static/js/2.fd2caa04.chunk.js",
+    "static/js/2.fd2caa04.chunk.js.map": "/referandom/static/js/2.fd2caa04.chunk.js.map",
+    "index.html": "/referandom/index.html",
+    "precache-manifest.15bee471b9fc19bff0e0f50c69c8da5a.js": "/referandom/precache-manifest.15bee471b9fc19bff0e0f50c69c8da5a.js",
+    "service-worker.js": "/referandom/service-worker.js",
+    "static/css/2.f9c6d729.chunk.css.map": "/referandom/static/css/2.f9c6d729.chunk.css.map",
+    "static/css/main.f57c73b3.chunk.css.map": "/referandom/static/css/main.f57c73b3.chunk.css.map",
+    "static/media/UploadIcon.svg": "/referandom/static/media/UploadIcon.1cedb6e9.svg",
+    "static/media/semantic.min.css": "/referandom/static/media/outline-icons.ef60a4f6.woff",
+    "static/media/font-awesome.css": "/referandom/static/media/fontawesome-webfont.fee66e71.woff"
+  }
+}
