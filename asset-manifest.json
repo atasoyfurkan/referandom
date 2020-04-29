@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/referandom/static/css/main.f57c73b3.chunk.css",
-    "main.js": "/referandom/static/js/main.d22131ec.chunk.js",
-    "main.js.map": "/referandom/static/js/main.d22131ec.chunk.js.map",
+    "main.js": "/referandom/static/js/main.beeddc3d.chunk.js",
+    "main.js.map": "/referandom/static/js/main.beeddc3d.chunk.js.map",
     "runtime~main.js": "/referandom/static/js/runtime~main.9f11a388.js",
     "runtime~main.js.map": "/referandom/static/js/runtime~main.9f11a388.js.map",
     "static/css/2.f9c6d729.chunk.css": "/referandom/static/css/2.f9c6d729.chunk.css",
     "static/js/2.fd2caa04.chunk.js": "/referandom/static/js/2.fd2caa04.chunk.js",
     "static/js/2.fd2caa04.chunk.js.map": "/referandom/static/js/2.fd2caa04.chunk.js.map",
     "index.html": "/referandom/index.html",
-    "precache-manifest.47aa77cf4041528f348cd6bc6299675a.js": "/referandom/precache-manifest.47aa77cf4041528f348cd6bc6299675a.js",
+    "precache-manifest.cd0ce9dd4bd67704c2cea4720e580c3d.js": "/referandom/precache-manifest.cd0ce9dd4bd67704c2cea4720e580c3d.js",
     "service-worker.js": "/referandom/service-worker.js",
     "static/css/2.f9c6d729.chunk.css.map": "/referandom/static/css/2.f9c6d729.chunk.css.map",
     "static/css/main.f57c73b3.chunk.css.map": "/referandom/static/css/main.f57c73b3.chunk.css.map",
