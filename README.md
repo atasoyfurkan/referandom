@@ -10,4 +10,4 @@ Website design with:
 - Node.js, MongoDB and Firebase for backend
 
 
-Accessible from: [atasoyfurkan.github.io/referandom](atasoyfurkan.github.io/referandom)
+Accessible from: https://atasoyfurkan.github.io/referandom
