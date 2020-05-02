@@ -10,4 +10,4 @@ Website design with:
 - Node.js, MongoDB and Firebase for backend
 
 
-Accessible from: http://referandombeta.herokuapp.com
+Accessible from: atasoyfurkan.github.io/referandom
